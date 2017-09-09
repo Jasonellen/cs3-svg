@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <script type="text/javascript" src="js/common.js"></script>
+    <style type="text/css">
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        
+        body {
+            box-sizing: border-box;
+        }
+        
+        .img {
+            height: 6.67rem;
+            width: 100%;
+            background: url(img/bds.png) no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .img p {
+            font-size: 0.36rem;
+            line-height: 0.5rem;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            position: relative;
+            margin: 0 auto;
+            border-radius: 5px;
+            top: 0.51rem;
+            width: 2.5rem;
+            text-align: center;
+            padding: 0.1rem 0.2rem;
+        }
+        
+        .img section {
+            position: relative;
+            margin: 0 auto;
+            width: 2.7rem;
+            color: #FFFFFF;
+            top: 0.8rem;
+            text-align: center;
+            font-size: 0.18rem;
+        }
+        
+        .img a {
+            position: absolute;
+            display: block;
+            width: 2.5rem;
+            height: 0.54rem;
+            border-radius: 15px;
+            border: 1px solid #fff;
+            font-size: 0.15rem;
+            bottom: 0.6rem;
+            color: #FFF;
+            text-align: center;
+            line-height: 0.54rem;
+            left: 0.65rem;
+        }
+        
+        .img i {
+            font-style: normal;
+            position: absolute;
+            color: #dbdbdb;
+            font-size: 0.12rem;
+            text-align: center;
+            margin-top: 0.3rem;
+            bottom: 0.2rem;
+            width: 3rem;
+            left: 0.4rem;
+        }
+        
+        .footer img {
+            width: 0.91rem;
+            margin-top: 0.21rem;
+            margin-left: 0.39rem;
+            margin-right: 0.11rem;
+        }
+        
+        .footer h2 {
+            font-size: 0.14rem;
+            color: #000000;
+            margin-top: 0.34rem;
+            margin-bottom: 0.1rem;
+        }
+        
+        .footer p {
+            color: #666666;
+            width: 1.8rem;
+            line-height: 0.2rem;
+        }
+
+        .img_bg_box{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+        .img_bg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+        }
+        
+        .small_star{
+            width: 0.2rem;
+            position: absolute;
+        }
+        .small_star1{
+            position: absolute;
+            top: 0.68rem;
+            left: 0.18rem;
+            animation:flash 2s  infinite;
+            -webkit-animation:flash 2s  infinite;
+        }
+        .small_star2{
+            top:0.24rem;
+            right: 0.37rem;
+            animation:flash 2.5s .7s infinite;
+            -webkit-animation:flash 2.5s .7s infinite;
+        }
+        .small_star3{
+            top:3.28rem;
+            left: 1.48rem;
+            animation:flash 2s 1.3s infinite;
+            -webkit-animation:flash 2s 1.3s infinite;
+        }
+        .star_green{
+            width:1.2rem;
+            position: absolute;
+            animation:star_green 2s  infinite;
+            -webkit-animation:star_green 2s  infinite;
+        }
+        .star_red{
+            width:90px;
+            position: absolute;
+            animation:star_red 3s  infinite;
+            -webkit-animation:star_red 3s  infinite;
+        }
+        .star_yellow{
+            width:120px;
+            left:4rem;
+            top:0rem;
+            position: absolute;
+            /*transform: rotate(-45deg);*/
+            /*-webkit-transform:rotate(-45deg);*/
+            animation:star_yellow 4s  infinite;
+            -webkit-animation:star_yellow 4s  infinite;
+        }
+        .img_moon{
+            transform: rotate(5deg);
+            -webkit-transform: rotate(5deg);
+        }
+        .img_moon.active{
+            animation:img_moon 6s  linear;
+            -webkit-animation:img_moon 6s  linear;
+        }
+        .star_svg{
+            fill:gold;
+            position: absolute;
+        }
+        .star_svg.active{
+            fill:gold;
+            animation:star 2s 3;
+            -webkit-animation:star 2s 3;
+            position: absolute;
+        }
+        .react_svg{
+            position: absolute;
+            margin: 0 auto;
+            top: 0.41rem;
+            left: 0.32rem;
+        }
+        .rect{
+            width: 2.89rem;
+            height:1.22rem;
+        }
+        .react_move{
+            stroke-dasharray: 30 244 20 254 15 250;
+            stroke-dashoffset: 822;
+            animation: run 13s linear infinite;
+            -webkit-animation: run 13s linear infinite;
+            stroke:#fff;
+            stroke-width:3;
+        }
+        @keyframes flash{
+            50%{opacity:0.4;}
+            100%{ opacity:1; }
+        }
+        @keyframes star_green{
+            from{left: 3rem;top:0;}
+            to{left:-1rem;top:2rem;opacity:0.3;}
+        }
+        @keyframes star_red{
+            from{left: 3rem;top:0rem;}
+            to{left:-2rem;top:3rem;opacity:0;}
+        }
+        @keyframes star_yellow{
+            to{left:-1rem;top:3rem;opacity:0.3;}
+        }
+        @keyframes img_moon{
+            25%{
+                transform: rotate(10deg);
+                -webkit-transform: rotate(10deg);
+            }
+            75%{
+                transform: rotate(0deg);
+                 -webkit-transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(5deg);
+                 -webkit-transform: rotate(5deg);
+            }
+        }
+        @keyframes star{
+            50%{fill: #fff;
+                transform: scale(1.02);
+                 -webkit-transform: scale(1.02);
+            }
+            100%{fill: gold;}
+        }
+        @keyframes run {
+            to {stroke-dashoffset: 0;}
+        }
+
+        @-webkit-keyframes flash{
+            50%{opacity:0.4;}
+            100%{ opacity:1; }
+        }
+        @-webkit-keyframes star_green{
+            from{left: 3rem;top:0;}
+            to{left:-1rem;top:2rem;opacity:0.3;}
+        }
+        @-webkit-keyframes star_red{
+            from{left: -2rem;top:1rem;}
+            to{left:1.5rem;top:2rem;opacity:0;}
+        }
+        @-webkit-keyframes star_yellow{
+            to{left:-1rem;top:3rem;opacity:0.3;}
+        }
+        @-webkit-keyframes img_moon{
+            25%{
+                transform: rotate(10deg);
+                -webkit-transform: rotate(10deg);
+            }
+            75%{
+                transform: rotate(0deg);
+                 -webkit-transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(5deg);
+                 -webkit-transform: rotate(5deg);
+            }
+        }
+        @-webkit-keyframes star{
+            50%{fill: #fff;
+                transform: scale(1.02);
+                 -webkit-transform: scale(1.02);
+            }
+            100%{fill: gold;}
+        }
+        @-webkit-keyframes run {
+            to {stroke-dashoffset: 0;}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img">
+        <div class="img_bg_box">
+            <img src="img/moon.png" alt="" class='img_bg img_moon'>
+            <img src="img/man.png" alt=""  class='img_bg'>
+            <svg
+                class='star_svg'
+                x="0px" y="0px" viewBox="0 0 1500 2668" 
+                style="enable-background:new 0 0 1500 2668;">
+                <polygon class="star" points="777.3,1595.3 944,1616 831.3,1713.3 868,1846 834.7,1884 727.3,1793.3 656.7,1879.3 608.7,1844.7
+                615.3,1731.3 466,1640.7 635.3,1580.7 686.7,1403"/>
+            </svg>
+            <img src="img/hand.png" alt=""  class='img_bg'>
+        </div>
+        <img src="img/Star_small.png" alt="" class="small_star small_star1">
+        <img src="img/Star_small.png" alt="" class="small_star small_star2">
+        <img src="img/Star_small.png" alt="" class="small_star small_star3">
+        <img src="img/star_green.png" alt="" class='star_green'>
+        <img src="img/star_green.png" alt=""   class='star_red'>
+        <img src="img/star_green.png" alt="" class='star_yellow'>
+        <p>潘建民同学<br/> 留学申请方案</p>
+        <svg class='react_svg'>
+            <rect 
+                x="10" y="10"  stroke="#fff" fill="transparent"
+                stroke-width="0.5" class="rect react_move"
+                rx="5" ry="5">
+            </rect>
+            <rect 
+                x="10" y="10" stroke="#fff" fill="transparent"  
+                class="rect" stroke-width="0.5" rx="5" ry="5">
+            </rect>
+        </svg>
+        <section>
+            24小时内我们将邀请名师<br/> 为你规划美国商科专业申请方案<br/> 希望未来你有更好的成就
+        </section>
+        <a>分享给你的小伙伴和朋友圈</a>
+        <i>有1000个复旦同学成功规划申请并分享给了小伙伴</i>
+    </div>
+</body>
+<script>
+    window.onload=function(){
+        var moon = document.querySelector('.img_moon')
+        var star = document.querySelector('.star_svg')
+        console.log(star)
+        document.onclick=function(){
+            moon.className = 'img_bg img_moon active'
+            star.style.animation = 'star 2s 3'
+            setTimeout(function(){
+                moon.className = 'img_bg img_moon'
+                star.style.animation = ''
+            },6000)
+        }
+    }
+</script>
+</html>
